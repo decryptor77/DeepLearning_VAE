@@ -72,6 +72,7 @@ def show_batch(batch):
 #     break
 
 ########################################################################################################################
+# Continuous VAE
 class contEncoder(nn.Module):
     def __init__(self, latent_dims):
         super(contEncoder, self).__init__()
@@ -181,6 +182,7 @@ torch.save(cont_vae.state_dict(), 'cont_VAE.pkl')
 
 
 ########################################################################################################################
+# Discrete VAE
 class DiscreteVAE(nn.Module):
     def __init__(self, latent_dim, categorical_dim):
         super(DiscreteVAE, self).__init__()
@@ -259,6 +261,7 @@ torch.save(disc_vae.state_dict(), 'disc_VAE.pkl')
 
 
 ########################################################################################################################
+# Both VAE
 class bothVAE(nn.Module):
     def __init__(self, latent_dim, categorical_dim, w_dim):
         super(bothVAE, self).__init__()
